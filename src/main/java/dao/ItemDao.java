@@ -45,6 +45,19 @@ public class ItemDao {
 		} else
 			return false;
 	}
+	 public ItemDto getItemById(int id) {
+		 entityManager = getEntityManager();
+			ItemDto item= entityManager.find(ItemDto.class,id);
+			 return item;
+		 }
+	
+	 public void updateItem(ItemDto item) {
+		 entityManager = getEntityManager();
+			entityTransaction = entityManager.getTransaction();
+		 entityTransaction.begin();
+		entityManager.merge(item);
+		 entityTransaction.commit();
+	 }
 	 public List<ItemDto> getAllItems() {
 			entityManager = getEntityManager();
 			Query query=entityManager.createQuery("select item from ItemDto item");

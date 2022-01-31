@@ -33,15 +33,16 @@
     </head>
 
     <body>
-
+<%
+HttpSession httpSession = request.getSession();
+String name=(String)httpSession.getAttribute("name"); %>
         <ul>
-            <li><a href="create_person.jsp">Create Item</a></li>
+            <li><a href="create_item.jsp">Create Item</a></li>
             <li><a href="displayitem">View</a></li>
-            <li><a href="search">Search</a></li>
+            <li><a href="search_item.jsp">Search</a></li>
             <li style="float:right"><a class="active" href="logout">Logout</a></li>
             <li style="float:right">
-                <a href="#contact">
-                    <%= session.getAttribute("name") %>
+                <a href="#contact"> <%=name%>
                 </a>
             </li>
         </ul>

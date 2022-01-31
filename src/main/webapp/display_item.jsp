@@ -7,9 +7,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
-
+</head>
 <body>
-
     <%  String status=(String)session.getAttribute("status");
     if(status == null){ %>
 
@@ -55,8 +54,6 @@
                     <th>Type</th>
                     <th>Edit</th>
                     <th>Delete</th>
-
-
                 </tr>
 
                 <%
@@ -80,10 +77,10 @@
                             <%=item.getType() %>
                         </td>
                         <td>
-                            <a href="?itemId=<%=item.getId() %>">Edit</a>
+                            <a href="getitem?itemId=<%=item.getId() %>">Edit</a>
                         </td>
                         <td>
-                            <a href="delete?itemId=<%=item.getId() %>">Display</a>
+                            <a href="deleteitem?itemId=<%=item.getId() %>">Delete</a>
                         </td>
 
                     </tr>
